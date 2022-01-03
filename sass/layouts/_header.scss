@@ -1,0 +1,29 @@
+.header{
+    position: fixed;
+    z-index: 1000;    
+    width: 100%;
+    background-color: rgba(#493240,  0.3);
+
+
+}
+.logo-box{
+    border: 1mm ridge var(--color-ivory);
+    padding: .5rem;
+
+    @include respond(phone-sm){
+        border: none;
+
+    }
+
+    &__logo{
+        font-family: 'Train One', cursive;
+        font-size: 2rem;
+        font-weight: 100;
+        color: var(--color-white);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+}
+
+

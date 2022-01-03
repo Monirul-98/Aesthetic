@@ -1,0 +1,179 @@
+.features{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right bottom,
+                      rgba(#FF0099, 0.801),rgba(#493240,-0.1));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 22rem;
+    color:var(--color-white);
+    text-transform: uppercase;
+    margin-top: -2.9rem;
+
+
+    &__text{
+        font-family: 'Quicksand', sans-serif;
+        font-size: 2rem;
+        width: 22%;
+        text-align: center;
+        
+        @include respond(phone-sm){
+            font-size: 1.5rem;
+        }
+    }
+
+    &__name{
+        padding: 1rem;
+        border: 1mm ridge var(--color-ivory);
+        font-family: 'Train One', cursive;
+        font-size: 2.3rem;
+        width: 22%;
+        text-align: center;
+
+        @include respond(phone-sm){
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.feature-box{
+    background-color: var(--color-grey-light-1);
+    font-size: 1.5rem;
+    width: 28%;
+    height: 55rem;
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem var(--color-black);
+    position: relative;
+    transition: all .3s;
+    text-align: center;
+    overflow: hidden;
+
+    @include respond(tab-port){
+        height: auto;
+        width: 60%; 
+
+        &:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+    &__picture{
+        background-size: cover;
+        height: 23rem;
+        filter: blur(1px);
+        background-blend-mode: hue;
+        -webkit-clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+        clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+
+        @include respond(tab-port){
+           visibility: hidden;
+           height: 8rem;
+        }
+
+        &--1{
+            background-image:linear-gradient(to right bottom,#EECDA3,#EF629F),url(/img/decor-3.jpg);
+        }
+
+        &--2{
+            background-image:linear-gradient(to right bottom,#EECDA3,#EF629F),url(/img/decor-5.jpg);
+        }
+
+        &--3{
+            background-image:linear-gradient(to right bottom,#EECDA3,#EF629F),url(/img/slide-2.jpg);
+        }
+    }
+
+    &__heading{
+        font-family: 'Train One', cursive;
+        font-size:2.8rem ;
+        font-weight:300 ;
+        color: var(--color-white);
+        text-transform: uppercase;
+        text-align: right;
+        position: absolute;
+        top: 15rem;
+        right: 0rem;
+        width:75%;
+
+        @include respond(tab-port){
+            top:1rem;
+            right: 50%;
+            width: 10%;
+        }
+    }
+
+    &__heading-span{
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        background-image: linear-gradient(to right bottom,
+            rgba(#FF0099,.85),
+            rgba(#493240,.85));
+    }
+
+    &__text{
+        font-size: 1.6rem;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        padding: 4rem 2rem;
+        width: 80%;
+        margin: 0 auto;
+        color: var(--color-primary-dark);
+
+        @include respond(tab-port){
+            padding: 1rem 1rem;
+        }
+    }
+
+    &__2{
+        width: 30%;
+        height: 60rem;
+
+        @include respond(tab-port){
+            height: auto;
+            width: 60%; 
+        }
+    }
+
+    &:hover{
+        transform:scale(1.02);
+        box-shadow: 0 2.5rem 5rem var(--color-black);
+    }
+
+
+}
+
+.properties{
+    margin: 13rem 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    //grid-template-rows: repeat(2,16rem);
+    grid-column-gap: 8rem;
+    grid-row-gap: 5rem;
+    align-items: start;
+    //justify-items: center;
+
+}
+
+.property{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1rem;
+    grid-column-gap: 2rem;
+
+    &__icon{
+        fill: #fff;
+        width: 3.5rem;
+        height: 3.5rem;
+        grid-row: 1/span 2;
+        //transform: translateY(-1rem);
+    }
+
+    &__text{
+        font-size: 1.7rem;
+        color: #fff;
+    }
+
+}

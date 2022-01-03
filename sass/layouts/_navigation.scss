@@ -1,0 +1,127 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 8rem 1.4rem 7rem;
+   
+    
+    &__list{
+        display: flex;
+        align-items: center;
+
+        @include respond(phone-sm){
+            display:inline-block;
+        }
+        &--drop{
+            position: absolute;
+            top:5rem;
+            display: none;
+
+        }
+    }
+
+    &__item{
+        list-style: none;
+
+        @include respond(phone-sm){
+            display:flex;
+            flex-direction: column;
+        }
+
+        &:not(:last-child){
+            margin-right: 3rem;
+        }
+
+        &:hover > .navigation__list--drop{
+            display: block;
+            
+        }
+
+        &--dropitem{
+            background-color: #493240;
+            width: 17rem;
+            display: list-item;
+            float: none;
+            position: relative;
+            text-align: start;
+
+            @include respond(phone-sm){
+
+                float: right;
+            }   
+        }  
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 200;
+            color: #fff;      
+            background-image: 
+            linear-gradient(120deg,transparent 0%,transparent 50%,var(--color-tertiary) 50%);
+            background-size: 227%;
+            transition: all .2s; 
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+
+            @include respond(phone-sm){
+                display:flex;
+                flex-direction: column;
+            }
+        }
+
+        &:hover,
+        &:active{
+            background-position: 100%;
+            //transform: translateY(1rem);
+            color: var(--color-grey-light-1);
+        }
+
+        &--droplink{
+            display: inline-block;
+            padding: 1rem;
+
+            @include respond(phone-sm){
+               float: right;
+                
+            }
+        }      
+    }
+
+    @include respond(phone-sm){
+        float: left;
+     }
+    
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.678);
+}
+
+.sticky .navigation__list .navigation__item .navigation__link:link,
+.sticky .navigation__list .navigation__item .navigation__link:visited{
+    padding: 1.2rem;
+    color: #fff;
+}
+
+.nav-icon{
+    
+    fill: #fff;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 1rem;
+    display: none;
+    
+    @include respond(phone-sm){
+        z-index: 2000;
+        display: inline-block;
+    }
+}
